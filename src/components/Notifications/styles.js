@@ -28,6 +28,7 @@ export const Badge = styled.button`
 `;
 
 export const NotificationList = styled.div`
+  display: ${props => (props.visible ? 'block' : 'none')};
   position: absolute;
   width: 260px;
   left: calc(50% - 130px);
@@ -63,6 +64,8 @@ export const Notification = styled.div`
   }
 
   time {
+    display: block;
+    margin-bottom: 5px;
     font-size: 12px;
     opacity: 0.6;
   }
@@ -72,9 +75,6 @@ export const Notification = styled.div`
     border: 0;
     background: none;
     color: ${lighten(0.2, '#7159c1')};
-    padding: 0 5px;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    margin: 0 5px;
   }
 
   ${props =>
@@ -87,6 +87,7 @@ export const Notification = styled.div`
         width: 8px;
         background: #ff892e;
         border-radius: 50%;
+        margin-left: 10px;
       }
     `}
 `;
