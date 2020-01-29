@@ -1,14 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Form, Input } from '@rocketseat/unform';
 import { Container } from './styles';
+import { updateProfileRequest } from '~/store/modules/user/actions';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const profile = useSelector(state => state.user.profile);
 
   function handleSubmit(data) {
-    //Implement request: put /users
+    dispatch(updateProfileRequest(data));
   }
 
   return (
