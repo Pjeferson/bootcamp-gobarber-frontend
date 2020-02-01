@@ -24,6 +24,8 @@ export function* signIn({ payload }) {
     }
     yield put(signInSuccess(token, user));
 
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
     history.push('/dashboard');
   } catch (error) {
     toast.error('Falha na autenticação. Verifique seus dados.');
